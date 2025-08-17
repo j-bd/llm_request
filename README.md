@@ -21,6 +21,18 @@ from llm_request import main
 
 # Votre code ici
 ```
+
+## Déploiement (Future containerisation)
+
+Ce projet est préparé pour la containerisation Docker. Quand vous serez prêt :
+
+```bash
+# Construire l'image Docker (décommentez le Dockerfile d'abord)
+make docker-build
+
+# Lancer avec Docker Compose
+make docker-compose-up
+```
 ## Développement
 
 Ce projet utilise [uv](https://github.com/astral-sh/uv) pour la gestion des dépendances.
