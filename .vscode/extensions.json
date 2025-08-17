@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "ms-python.mypy-type-checker",
+        "eamodio.gitlens",
+        "mikestead.dotenv",
+        "redhat.vscode-yaml",
+        "ms-vscode.makefile-tools",
+        "ms-python.pytest",
+        "njpwerner.autodocstring"
+    ]
+}

@@ -1,0 +1,58 @@
+[project]
+name = "llm-request"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "J BO", email = "recodata.out@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+llm-request = "llm_request:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "bandit>=1.8.6",
+    "mypy>=1.17.1",
+    "myst-parser>=4.0.1",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.12.9",
+    "safety>=3.6.0",
+    "sphinx>=8.2.3",
+    "sphinx-autodoc-typehints>=3.2.0",
+    "sphinx-rtd-theme>=3.0.2",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+lint.select = ["E", "W", "F", "I", "N", "B", "A", "C4", "UP"]
+lint.ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--cov=src/llm_request --cov-report=html --cov-report=term"
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "docs"]
+skips = ["B101"]
+
+[tool.safety]
+# Configuration pour safety
+ignore = []
