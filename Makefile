@@ -48,7 +48,7 @@ build: ## Construit le package
 pre-commit: ## Lance tous les checks pre-commit
 	pre-commit run --all-files
 
-all-checks: lint format type-check security test ## Lance tous les checks de qualité
+all-checks: lint format type-check security safety test ## Lance tous les checks de qualité
 
 ## Docker commands (uncomment when ready for containerization)
 # docker-build: ## Build Docker image
@@ -81,3 +81,6 @@ production-env: ## Créer un fichier .env.production template
 	@echo "LOG_LEVEL=WARNING" >> .env.production.example
 	@echo "# Add your production API keys here" >> .env.production.example
 	@echo "✅ .env.production.example créé!"
+
+safety:
+	uv run safety scan

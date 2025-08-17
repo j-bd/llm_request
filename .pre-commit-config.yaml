@@ -26,14 +26,9 @@ repos:
         additional_dependencies: []
         args: [--ignore-missing-imports]
 
+  # Configuration bandit simplifiée - utilise la config du pyproject.toml
   - repo: https://github.com/PyCQA/bandit
     rev: 1.8.6
     hooks:
       - id: bandit
-        args: ["-r", "src", "--skip", "B101"]
-        exclude: ^tests/
-
-  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
-    rev: v1.4.2
-    hooks:
-      - id: python-safety-dependencies-check
+        args: ["--configfile", "pyproject.toml"]
