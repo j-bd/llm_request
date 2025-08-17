@@ -1,7 +1,7 @@
 [project]
 name = "llm-request"
 version = "0.1.0"
-description = "Add your description here"
+description = "LLM request simple test"
 readme = "README.md"
 authors = [{ name = "J BO", email = "recodata.out@gmail.com" }]
 requires-python = ">=3.12"
@@ -17,6 +17,7 @@ build-backend = "hatchling.build"
 [dependency-groups]
 dev = [
     "bandit>=1.8.6",
+    "linkify-it-py>=2.0.3",
     "mypy>=1.17.1",
     "myst-parser>=4.0.1",
     "pre-commit>=4.3.0",
