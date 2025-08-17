@@ -2,9 +2,9 @@ name: Documentation
 
 on:
   push:
-    branches: [master, develop]
+    branches: [main, master, develop]
   pull_request:
-    branches: [master]
+    branches: [main, master]
 
 jobs:
   build-docs:
@@ -31,7 +31,7 @@ jobs:
           uv run sphinx-build -b html . _build/html -W
 
       - name: Upload documentation artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: documentation
           path: docs/_build/html/

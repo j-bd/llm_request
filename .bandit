@@ -4,9 +4,11 @@ exclude_dirs:
   - .venv
   - docs
 
+# Ignorer B101 (assert_used) car c'est normal dans les tests
 skips:
   - B101 # Skip assert_used test (OK in tests)
 
+# Tests spécifiques à exécuter
 tests:
   - B102
   - B103
