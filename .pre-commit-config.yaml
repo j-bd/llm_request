@@ -1,19 +1,39 @@
 repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
+    hooks:
+      - id: nbstripout
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.8
+    rev: v0.12.9
     hooks:
       - id: ruff
-        args: [--fix]
+        args:
+          [
+            --line-length,
+            "80",
+            --extend-select=E,
+            --extend-select=I,
+            --fix,
+            --exclude=*.ipynb,
+          ]
       - id: ruff-format
+
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.7.1
+    rev: v1.17.1
     hooks:
       - id: mypy
-        # Suppression de types-all qui cause des conflits
         additional_dependencies: []
         args: [--ignore-missing-imports]
+
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.5
+    rev: 1.8.6
     hooks:
       - id: bandit
         args: ["-r", "src", "--skip", "B101"]
+        exclude: ^tests/
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.4.2
+    hooks:
+      - id: python-safety-dependencies-check

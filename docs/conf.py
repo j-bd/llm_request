@@ -9,6 +9,9 @@ import sys
 # Ajout du chemin vers le code source
 sys.path.insert(0, os.path.abspath("../src"))
 
+# Configuration pour éviter les erreurs d'import
+autodoc_mock_imports: list[str] = []
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
